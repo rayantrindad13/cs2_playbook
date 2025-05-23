@@ -40,17 +40,16 @@ html,
 
 .home__button {
   filter: invert(1);
-  width: 10%;
-  height: 10%;
+  width: 10rem;
+  height: 10rem;
   position: absolute;
   top: 50%;
-  right: 1%;
+  right: 1rem;
   transform: translateY(-50%);
-
-  padding: 1rem 2rem;
+  padding: 1.5rem 3rem;
   color: #000;
   font-weight: bold;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
@@ -62,31 +61,147 @@ html,
   }
 }
 
+/* Home Mapa */
+.home--mapa {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home--mapa__img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(0.2rem);
+}
+
+.container__mapas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+  width: 90rem;
+  max-width: 50rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.container__mapas--btn {
+  width: 13rem;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 0.625rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.container__mapas--btn:hover {
+  transform: scale(1.05);
+}
+
+.container__mapas--img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0.625rem;
+}
+
+/*Jogadas dos mapas TR-CT*/
+
+.home--side {
+  display: flex;
+  flex-direction: row; /* TR e CT lado a lado */
+  width: 100vw;
+  height: 100vh;
+}
+
+.home--side__tr,
+.home--side__ct {
+  flex: 1; /* divide igualmente */
+  display: flex;
+  flex-direction: column; /* conteúdo interno em coluna */
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.home--side__tr {
+  background-color: #8b0000; /* Exemplo: vermelho escuro */
+}
+
+.home--side__ct {
+  background-color: #00008b; /* Exemplo: azul escuro */
+}
+
+/* Responsividade */
+
+@media (max-width: 48rem) {
+  /* até 768px */
+  .home--side {
+    flex-direction: column; /* empilha TR e CT */
+  }
+}
+
 /* Responsividade */
 
 /* Tablets */
-@media (max-width: 1024px) {
+@media (max-width: 64rem) {
+  /* 1024px */
   .home__button {
-    padding: 0.9rem 1.8rem;
+    padding: 1.35rem 2.7rem;
     font-size: 1rem;
     bottom: 8%;
   }
 }
 
 /* Celulares médios */
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
+  /* 768px */
   .home__button {
-    padding: 0.75rem 1.5rem;
+    padding: 1.125rem 2.25rem;
     font-size: 0.9rem;
     bottom: 7%;
   }
 }
 
 /* Celulares pequenos */
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
+  /* 480px */
   .home__button {
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     font-size: 0.8rem;
     bottom: 5%;
+  }
+}
+
+@media (max-width: 64rem) {
+  /* 1024px */
+  .container__mapas--btn {
+    width: 13rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 48rem) {
+  /* 768px */
+  .container__mapas--btn {
+    width: 10rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 30rem) {
+  /* 480px */
+  .container__mapas--btn {
+    width: 7rem;
+    height: 7rem;
   }
 }

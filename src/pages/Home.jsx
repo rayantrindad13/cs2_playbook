@@ -1,5 +1,5 @@
-import imgHome from "./assets/cs-agg-playbook.jpg";
-import setaDir from "./assets/right-arrow.svg";
+import imgHome from "../assets/cs-agg-playbook.jpg";
+import setaDir from "../assets/right-arrow.svg";
 import { Link } from "react-router-dom";
 
 const Home = () => {
