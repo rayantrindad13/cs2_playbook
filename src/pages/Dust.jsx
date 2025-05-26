@@ -1,17 +1,13 @@
 import imgHomeMapa from "../assets/home-mapa.jpeg";
-import de_mirage from "../assets/mirage/de_mirage.jpg";
+import de_dust from "../assets/dust2/de_dust2.jpg";
 
-const Mirage = () => {
+const Dust = () => {
   return (
     <div className="home--mapa">
       <img src={imgHomeMapa} alt="Background" className="home--mapa__img" />
 
       <div className="home--esqueleto">
-        <img
-          src={de_mirage}
-          alt="Mapa Mirage"
-          className="home--esqueleto__img"
-        />
+        <img src={de_dust} alt="Mapa Mirage" className="home--esqueleto__img" />
       </div>
 
       <div className="home--side">
@@ -29,4 +25,4 @@ const Mirage = () => {
   );
 };
 
-export default Mirage;
+export default Dust;

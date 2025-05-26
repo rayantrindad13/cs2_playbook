@@ -1,17 +1,13 @@
 import imgHomeMapa from "../assets/home-mapa.jpeg";
-import de_mirage from "../assets/mirage/de_mirage.jpg";
+import de_nuke from "../assets/nuke/de_nuke.jpg";
 
-const Mirage = () => {
+const Nuke = () => {
   return (
     <div className="home--mapa">
       <img src={imgHomeMapa} alt="Background" className="home--mapa__img" />
 
       <div className="home--esqueleto">
-        <img
-          src={de_mirage}
-          alt="Mapa Mirage"
-          className="home--esqueleto__img"
-        />
+        <img src={de_nuke} alt="Mapa Nuke" className="home--esqueleto__img" />
       </div>
 
       <div className="home--side">
@@ -29,4 +25,4 @@ const Mirage = () => {
   );
 };
 
-export default Mirage;
+export default Nuke;

@@ -13,7 +13,7 @@ html,
   font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* Home */
@@ -65,8 +65,9 @@ html,
 .home--mapa {
   position: relative;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .home--mapa__img {
@@ -75,18 +76,19 @@ html,
   height: 100%;
   object-fit: cover;
   filter: blur(0.2rem);
+  z-index: 0;
 }
 
 .container__mapas {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
   gap: 1rem;
   padding: 2rem;
-  width: 90rem;
+  width: 90%;
   max-width: 50rem;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
 }
 
 .container__mapas--btn {
@@ -113,93 +115,139 @@ html,
   border-radius: 0.625rem;
 }
 
-/*Jogadas dos mapas TR-CT*/
-
+/* Jogadas dos mapas TR-CT */
 .home--side {
+  position: relative;
+  z-index: 1;
   display: flex;
-  flex-direction: row; /* TR e CT lado a lado */
-  width: 100vw;
-  height: 100vh;
-}
-
-.home--side__tr,
-.home--side__ct {
-  flex: 1; /* divide igualmente */
-  display: flex;
-  flex-direction: column; /* conteúdo interno em coluna */
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  width: 100%;
   padding: 2rem;
   gap: 1rem;
 }
 
-.home--side__tr {
-  background-color: #8b0000; /* Exemplo: vermelho escuro */
+.home--side__tr,
+.home--side__ct {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
-.home--side__ct {
-  background-color: #00008b; /* Exemplo: azul escuro */
+/* Moldura das jogadas */
+.jogada-box {
+  width: 80%;
+  padding: 1rem;
+  border: 0.4rem solid #ffffff;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(0.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.jogada-box h2 {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.jogada-box p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Esqueleto do Mapa */
+.home--esqueleto {
+  position: relative;
+  z-index: 1;
+  width: 30rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  border: 0.4rem solid #ffffff;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(0.5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home--esqueleto__img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.5rem;
 }
 
 /* Responsividade */
 
-@media (max-width: 48rem) {
-  /* até 768px */
+@media (max-width: 768px) {
+  .home--esqueleto {
+    width: 20rem;
+    padding: 0.8rem;
+  }
+
   .home--side {
-    flex-direction: column; /* empilha TR e CT */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .jogada-box {
+    width: 90%;
   }
 }
 
-/* Responsividade */
+@media (max-width: 480px) {
+  .home--esqueleto {
+    width: 15rem;
+    padding: 0.5rem;
+  }
 
-/* Tablets */
-@media (max-width: 64rem) {
-  /* 1024px */
+  .jogada-box {
+    width: 95%;
+  }
+}
+
+/* Botão Home */
+@media (max-width: 1024px) {
   .home__button {
     padding: 1.35rem 2.7rem;
     font-size: 1rem;
-    bottom: 8%;
   }
 }
 
-/* Celulares médios */
-@media (max-width: 48rem) {
-  /* 768px */
+@media (max-width: 768px) {
   .home__button {
     padding: 1.125rem 2.25rem;
     font-size: 0.9rem;
-    bottom: 7%;
   }
 }
 
-/* Celulares pequenos */
-@media (max-width: 30rem) {
-  /* 480px */
+@media (max-width: 480px) {
   .home__button {
     padding: 0.75rem 1.5rem;
     font-size: 0.8rem;
-    bottom: 5%;
   }
 }
 
-@media (max-width: 64rem) {
-  /* 1024px */
+/* Container Mapas */
+@media (max-width: 1024px) {
   .container__mapas--btn {
     width: 13rem;
-    height: auto;
   }
 }
 
-@media (max-width: 48rem) {
-  /* 768px */
+@media (max-width: 768px) {
   .container__mapas--btn {
     width: 10rem;
-    height: auto;
   }
 }
 
-@media (max-width: 30rem) {
-  /* 480px */
+@media (max-width: 480px) {
   .container__mapas--btn {
     width: 7rem;
     height: 7rem;
