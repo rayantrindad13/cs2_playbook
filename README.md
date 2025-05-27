@@ -7,99 +7,77 @@ Permite ao usuário visualizar jogadas separadas por lado (TR/CT), acessar detal
 🔗 Rotas
 / → Página inicial com banner e botão de acesso.
 
-/HomeMapa → Seleção de mapas com imagens (Mirage, Dust 2, Nuke).
+        /HomeMapa → Seleção de mapas com imagens (Mirage, Dust 2, Nuke).
 
-/Mirage, /Dust-2, /Nuke → Páginas individuais de cada mapa.
+        /Mirage, /Dust-2, /Nuke → Páginas individuais de cada mapa.
 
 🖼️ Estrutura de cada página de mapa
-Imagem de fundo (blur) do mapa.
-
-Esqueleto centralizado e emoldurado do mapa.
-
-Colunas lado TR e CT:
-
-Jogadas listadas dinamicamente de um arquivo local JS.
-
-Cada jogada exibida como botão.
 
 🚀 Renderização dinâmica das jogadas
-Arquivo local JSON/JS contendo:
-
-id
-
-nome
-
-lado (TR ou CT)
-
-descrição
-
-imagem
-
-video (opcional)
 
 🖱️ Ação nas jogadas
 Cada botão ao ser clicado:
 
-Dispara um dispatch(abrirPopup(jogada)) usando Redux.
+        Dispara um dispatch(abrirPopup(jogada)) usando Redux.
 
-Abre um popup global com os detalhes da jogada.
+        Abre um popup global com os detalhes da jogada.
 
-🛠️ Redux configurado
-Criado popupSlice.js com reducers para:
+        🛠️ Redux configurado
+        Criado popupSlice.js com reducers para:
 
-abrirPopup
+        abrirPopup
 
-fecharPopup
+        fecharPopup
 
-store.js configurado.
+        store.js configurado.
 
-Provider envolveu <App /> no main.jsx.
+        Provider envolveu <App /> no main.jsx.
 
 💬 Componente global de Popup
 Inserido no App.jsx para renderização global.
 
-Exibe:
+        Exibe:
 
-Nome da jogada.
+        Nome da jogada.
 
-Descrição.
+        Descrição.
 
-Imagem.
+        Imagem.
 
-Botão para fechar.
+        Botão para fechar.
 
 🎨 Estilização
 Estrutura com Flexbox para colunas de TR e CT.
 
-Moldura estilizada no esqueleto do mapa.
+        Moldura estilizada no esqueleto do mapa.
 
-Lista de jogadas dentro de moldura, com espaçamento e tipografia adequada.
+        Lista de jogadas dentro de moldura, com espaçamento e tipografia adequada.
 
-Responsividade garantida via @media queries.
+        Responsividade garantida via @media queries.
 
-Estilização padrão para botões da jogada (.jogada-btn), com hover e foco.
+        Estilização padrão para botões da jogada (.jogada-btn), com hover e foco.
 
 🚧 Melhorias futuras
 Implementar preview de vídeo nas jogadas.
 
-Navegação entre jogadas no popup.
+        Navegação entre jogadas no popup.
 
-Sistema de favoritos.
+        Sistema de favoritos.
 
-Autoplay de smoke lineups.
+        Autoplay de smoke lineups.
 
-Trocar Flexbox por CSS Grid para melhor alinhamento vertical.
+        Trocar Flexbox por CSS Grid para melhor alinhamento vertical.
 
-Animações no popup.
+        Animações no popup.
 
 🛠️ Tecnologias utilizadas
 React.js com react-router-dom
 
-Redux Toolkit para gerenciamento de estado global.
+        Redux Toolkit para gerenciamento de estado global.
 
-CSS puro com responsividade.
+        CSS puro com responsividade.
 
-Vite como bundler.
+        Vite como bundler.
 
 🏅 Autor
 Projeto desenvolvido por Rayan Alcantara.
